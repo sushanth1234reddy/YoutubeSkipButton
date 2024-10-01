@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(191, 191, 112);
+        }
+        #d1{
+            border: 2px solid black;
+            background-color:  beige;
+            height: 300px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">th</div> <br>
+    <button id="theme">Change Theme</button>
+    <script>
+        let d1=document.getElementById("d1");
+        let theme=document.getElementById("theme");
+        let count=0;
+        theme.addEventListener("click",()=>{
+            count++;
+            if(count%2!=0){
+                d1.style.backgroundColor="black";
+                d1.style.color="white";
+                d1.style.border="2px dotted white";
+
+                theme.style.backgroundColor="black";
+                theme.style.color="white";
+
+                document.body.style.backgroundColor="black";
+            }
+            else{
+                d1.style.backgroundColor="white";
+                d1.style.color="black";
+                d1.style.border="2px dotted black";
+
+                theme.style.backgroundColor="white";
+                theme.style.color="black";
+
+                document.body.style.backgroundColor="white";
+            }
+        })
+    </script>
+</body>
+</html>
