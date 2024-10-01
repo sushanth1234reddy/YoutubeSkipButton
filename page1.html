@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border: 2px solid black;
+            height: 300px;
+            width: 400px;
+            /* background-image: url(bgpic.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover; */
+            display: flex;
+            position: fixed;
+            top: 10px;
+            
+            
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 10px 20px;
+
+            
+        }
+        button{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            height: 30px;
+            width: 70px;
+            background-color: red;
+            color: white;
+            display: none;
+            margin-bottom: 17px;
+
+        }
+        
+        #timer{
+            border: 2px solid black;
+            padding: 2px 8px ;
+            background-color: whitesmoke;
+            border-radius: 10%;
+            
+        }
+        a{
+            color: white;
+        }
+        
+        video{
+            
+            position: fixed;
+            top: 20px;
+            
+            width: 438px;
+        }
+    </style>
+</head>
+<body>
+    <video muted autoplay >
+        <source src="adVid.mp4">
+    </video>
+    <div id="main">
+        <p id="timer" style="font-weight: bolder;">Here is the Ad</p>
+        <button id="skip"><a style="text-decoration: none;" target="_self" href="vidpage.html">Skip Ad</a></button>
+
+    </div>
+    <script>
+        let timer=document.getElementById("timer");
+        let skip=document.getElementById("skip");
+
+        let x=setInterval(() => {
+            timer.innerHTML=`AD Ends in:${y}`;
+            y--;
+            if(y==-1){
+                clearInterval(x);
+            }
+        }, 1000,y=20);
+        setInterval(() => {
+            skip.style.display="inline";
+        }, 6000);
+
+    </script>
+</body>
+</html>
